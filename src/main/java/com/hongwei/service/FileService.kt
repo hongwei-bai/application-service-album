@@ -17,6 +17,9 @@ class FileService {
     @Value("\${app.upload.dir:\${user.home}}")
     var uploadDir: String? = null
     fun uploadFile(file: MultipartFile) {
+
+        print("bbbb uploadDir: $uploadDir")
+
         try {
             val copyLocation: Path = Paths
                     .get(uploadDir + File.separator + StringUtils.cleanPath(file.originalFilename))
